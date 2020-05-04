@@ -1,0 +1,27 @@
+/**
+ * The knows API is defined in the parent class VersionControl.
+ *     func isBadVersion(_ version: Int) -> Bool{}
+ */
+
+class Solution : VersionControl {
+    func firstBadVersion(_ n: Int) -> Int {
+        var l = 0
+        var r = n
+        
+        while(l<=r){
+            var mid = (l+r)/2
+            if isBadVersion(mid-1) == false && isBadVersion(mid) == true{
+                return mid
+            }                
+            else{
+                if isBadVersion(mid) == false{
+                    l = mid+1
+                }                    
+                else{
+                    r = mid-1
+                }       
+            }
+        }
+        return -1
+    }
+}
