@@ -1,0 +1,14 @@
+class Solution {
+    func numJewelsInStones(_ J: String, _ S: String) -> Int {
+        var jewelCount = 0
+     
+        for stone in S{
+            for jewel in J{
+                if jewel==stone{
+                    jewelCount += 1
+                }                
+            }            
+        }
+        return jewelCount
+    }
+}
